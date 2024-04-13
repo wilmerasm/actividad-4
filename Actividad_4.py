@@ -37,3 +37,11 @@ cluster_mas_rapido = tiempo_promedio_por_cluster.idxmin()
 tiempo_cluster_mas_rapido = tiempo_promedio_por_cluster[cluster_mas_rapido]
 
 print(f"\nEl cluster más rápido es el número {cluster_mas_rapido}, con un tiempo promedio de viaje de {tiempo_cluster_mas_rapido:.2f} minutos.")
+
+# Visualización de los clusters
+plt.scatter(X['distancia'], X['tiempo'], c=datos['cluster'], cmap='viridis')
+plt.xlabel('Distancia')
+plt.ylabel('Tiempo')
+plt.title('Clusters de datos de transporte masivo')
+plt.colorbar(label='Cluster')
+plt.show()
